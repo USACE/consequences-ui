@@ -2,6 +2,7 @@
   "name": "react-redux-bundler-bootstrap-scaffold",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://apps.rsgis.dev/consequences",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -19,7 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy-dev": "aws s3 rm s3://corpsmap-appz/consequences --recursive && aws s3 cp ./build/ s3://corpsmap-appz/consequences --recursive"
   },
   "eslintConfig": {
     "extends": "react-app"
