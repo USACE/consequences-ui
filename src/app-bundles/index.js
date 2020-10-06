@@ -14,7 +14,7 @@ import pkg from "../../package.json";
 
 export default composeBundles(
   createAuthBundle({
-    appId: "APP_ID_HERE",
+    appId: "3bafa9e3-4389-453c-ade1-d9d54d07fa84",
     redirectOnLogout: pkg.homepage,
     token:
       "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwIiwibmFtZSI6IlRlc3QuVXNlciIsImlhdCI6MTUxNjIzOTAyMn0.D_66UceE82DkXwKcpzj0cxl126jAaev_FSGPCDzhRys",
@@ -22,8 +22,8 @@ export default composeBundles(
   createJwtApiBundle({
     root:
       process.env.NODE_ENV === "development"
-        ? `http://localhost:3030/APP_NAME_HERE`
-        : `https://api.rsgis.dev/development/APP_NAME_HERE`,
+        ? `http://localhost:3030/consequences`
+        : `https://api.rsgis.dev/development/consequences`,
     tokenSelector:
       process.env.NODE_ENV === "development"
         ? "selectProfileMockToken"
