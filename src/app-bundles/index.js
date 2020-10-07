@@ -11,6 +11,7 @@ import routesBundle from './routes-bundle';
 import modalBundle from './modal-bundle'
 import cache from "../cache";
 import pkg from "../../package.json";
+import eventsBundle from "./events-bundle";
 
 export default composeBundles(
   createAuthBundle({
@@ -26,7 +27,7 @@ export default composeBundles(
         : `https://api.rsgis.dev/development/consequences`,
     tokenSelector:
       process.env.NODE_ENV === "development"
-        ? "selectProfileMockToken"
+        ? "selectAuthToken"
         : "selectAuthToken",
     unless: {
       // GET requests do not include token unless path starts with /my_
@@ -50,5 +51,6 @@ export default composeBundles(
     pkg: pkg,
   }),
   routesBundle,
-  modalBundle
+  modalBundle,
+  eventsBundle
 );
